@@ -14,6 +14,7 @@
         <div class="animated fadeIn">
 
           	<!-- PASTIKAN MENGIRIMKAN ID PADA ROUTE YANG DIGUNAKAN -->
+            {{-- <form action="{{ route('product.update', $product->id) }}" method="post" enctype="multipart/form-data" > --}}
                 <a href="{{ route('product.edit', $row->id) }}" class="btn btn-warning btn-sm">Edit</a>
                 @csrf
               	<!-- KARENA UPDATE MAKA KITA GUNAKAN DIRECTIVE DIBAWAH INI -->

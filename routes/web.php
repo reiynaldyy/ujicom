@@ -35,5 +35,7 @@ Route::post('/product/bulk', 'ProductController@massUpload')->name('product.save
     //INI ADALAH ROUTE BARU
     Route::resource('category', 'CategoryController')->except(['create', 'show']);
     Route::resource('product', 'ProductController');
+
+    Route::get('/', 'Ecommerce\FrontController@index')->name('front.index');
 });
 
