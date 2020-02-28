@@ -18,8 +18,8 @@
                         <div class="card-header">
                             <h4 class="card-title">
                                 List Product
-                              
                                 <!-- BUAT TOMBOL UNTUK MENGARAHKAN KE HALAMAN ADD PRODUK -->
+                                <a href="{{ route('product.bulk') }}" class="btn btn-danger btn-sm">Mass Upload</a>
                                 <a href="{{ route('product.create') }}" class="btn btn-primary btn-sm float-right">Tambah</a>
                             </h4>
                         </div>
@@ -44,7 +44,7 @@
                                     </div>
                                 </div>
                             </form>
-                          
+
                             <!-- TABLE UNTUK MENAMPILKAN DATA PRODUK -->
                             <div class="table-responsive">
                                 <table class="table table-hover table-bordered">
@@ -75,7 +75,7 @@
                                             </td>
                                             <td>Rp {{ number_format($row->price) }}</td>
                                             <td>{{ $row->created_at->format('d-m-Y') }}</td>
-                                            
+
                                             <!-- KARENA BERISI HTML MAKA KITA GUNAKAN { !! UNTUK MENCETAK DATA -->
                                             <td>{!! $row->status_label !!}</td>
                                             <td>

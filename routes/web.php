@@ -28,6 +28,10 @@ Route::delete('/category/{category_id}', 'CategoryController@destroy')->name('ca
 Route::get('/category/{category_id}', 'CategoryController@show')->name('category.show');
 Route::get('/category/create', 'CategoryController@create')->name('category.create');
 
+Route::resource('product', 'ProductController')->except(['show']); //BAGIAN INI KITA TAMBAHKAN EXCETP KARENA METHOD SHOW TIDAK DIGUNAKAN
+Route::get('/product/bulk', 'ProductController@massUploadForm')->name('product.bulk'); //TAMBAHKAN ROUTE INI
+Route::post('/product/bulk', 'ProductController@massUpload')->name('product.saveBulk');
+
     //INI ADALAH ROUTE BARU
     Route::resource('category', 'CategoryController')->except(['create', 'show']);
     Route::resource('product', 'ProductController');
